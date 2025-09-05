@@ -616,6 +616,12 @@ export default function App() {
     const apiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY; // The API Key Has Been Changes;
     const apiUrl = `https://api.openai.com/v1/chat/completions`;
 
+    // Check if API key is available
+    if (!apiKey) {
+      console.error('OpenAI API key is missing!');
+      return "Thank you for sharing. Let's continue with the next question.";
+    }
+
     let response;
     try {
       response = await fetch(apiUrl, {
