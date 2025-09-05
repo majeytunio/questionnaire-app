@@ -126,7 +126,7 @@
 // //       model: "gpt-3.5-turbo", // or another model like gpt-4
 // //       messages: [{ role: "user", content: prompt }],
 // //     };
-// //   const apiKey = process.env.OPENAI_API_KEY; // Canvas will provide this key at runtime
+// //   const apiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY; // Canvas will provide this key at runtime
 // //     const apiUrl = `https://api.openai.com/v1/chat/completions`;
 
 // //     let response;
@@ -323,7 +323,7 @@
 //       model: "gpt-3.5-turbo",
 //       messages: [{ role: "user", content: prompt }],
 //     };
-//    const apiKey = process.env.OPENAI_API_KEY;
+//    const apiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
 //     const apiUrl = `https://api.openai.com/v1/chat/completions`;
 
 //     let response;
@@ -613,7 +613,7 @@ export default function App() {
     
     // IMPORTANT: In a real application, you should never expose your API key in client-side code.
     // This should be handled through a server-side endpoint.
-    const apiKey = process.env.OPENAI_API_KEY // The API Key Has Been Changes;
+    const apiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY; // The API Key Has Been Changes;
     const apiUrl = `https://api.openai.com/v1/chat/completions`;
 
     let response;
