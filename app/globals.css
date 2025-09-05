@@ -1,4 +1,4 @@
-@import "tailwindcss";
+/* @import "tailwindcss";
 
 :root {
   --background: #ffffff;
@@ -23,4 +23,115 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+} */
+
+
+
+
+
+
+
+
+
+
+
+/* @import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+} */
+
+
+
+
+
+
+/* globals.css */
+
+/* Import Tailwind base styles */
+@import "tailwindcss";
+
+:root {
+  /* Brand colors */
+  --gold: #37c7d4;        /* Primary gold */
+  --gold-light: #8ce1f0;  /* Accent gold */
+  --black: #0a0a0a;       /* Deep black */
+  --white: #ffffff;
+  --gray: #9ca3af;        /* Neutral gray */
+  --gray-dark: #1a1a1a;
+
+  --danger-color: #ff5100;
+  --success-color: #00daab;
+
+
+  --block-normal: #ffffff;
+  --block-primary: #37c7d4;
+  --block-secondary: #102030;
+
+  --border-primary: #37c7d4;
+  --border-secondary: #102030;
+
+  --text-primary: #4da1e1;
+
+  --button-primary: #3790d4;
+  --button-secondary: #1f4f74;
+
+  --button-outine-primary: #1f4f74;
+  --button-outline-secondary: #1f4f74;
+
+  --navbar-background: #102030;
+  --navbar-link-hover: #7bc3f0;
+
+  --navbar-link-background: #285e80;
+  --navbar-link-background-hover: #3986b7;
+  --navbar-link-background-active: #46a9e7;
+
+
+  /* UI semantic colors (light mode) */
+  --background: var(--white);
+  --foreground: var(--black);
+  --card-bg: #f9f9f9;
+  --border: #e5e7eb;
+
+  /* Font families (optional) */
+  --font-sans: var(--font-geist-sans, Arial, sans-serif);
+  --font-mono: var(--font-geist-mono, monospace);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* UI semantic colors (dark mode) */
+    --background: var(--black);
+    --foreground: var(--white);
+    --card-bg: var(--gray-dark);
+    --border: #2e2e2e;
+  }
+}
+
+/* Optional default body styling */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
 }
