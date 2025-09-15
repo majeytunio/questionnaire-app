@@ -1635,9 +1635,11 @@ export default function App() {
     }));
 
     // Create a prompt for OpenAI
-    const prompt = `You are conducting a comprehensive assessment. The user just answered the question: "${currentQuestion}" with: "${input}". 
+    const prompt = `You are conducting a comprehensive assessment. The user just answered the question: 
+    "${currentQuestion}" with: "${input}". 
     Provide a brief, empathetic, and encouraging response (1-2 sentences) and then prepare to ask the next question. 
-    Do not repeat the user's answer verbatim. Keep it natural and conversational.`;
+    Do not repeat the user's answer verbatim. Keep it natural and conversational. I strongly force you to reply in ${language}.
+    If all questions are completed, repond with the markdown for final assessment report and add [final] at the end of the final assessment report.`;
 
     const botResponseText = await callOpenAIAPI(prompt);
 
