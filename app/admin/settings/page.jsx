@@ -336,8 +336,6 @@ export default function AdminSettingsPage() {
             <li>Assessment moderation</li>
           </ul>
         </section> */}
-
-        {/* HELLO DEAR */}
       </main>
 
       <Footer currentUser={user} />
