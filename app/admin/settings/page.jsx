@@ -261,7 +261,7 @@ export default function AdminSettingsPage() {
         <h1 className="text-3xl font-bold">Admin Settings</h1>
 
         {/* Admin Account */}
-        <section className="bg-[var(--block-secondary)] p-6 rounded-xl shadow">
+        <section className="dark:bg-[var(--block-secondary)] p-6 rounded-xl shadow">
           <h2 className="text-xl font-semibold mb-4">Admin Account</h2>
           <p className="text-sm text-gray-400 mb-3">Logged in as {user.email}</p>
 
@@ -271,7 +271,7 @@ export default function AdminSettingsPage() {
               value={newPassword}
               onChange={e => setNewPassword(e.target.value)}
               placeholder="New password"
-              className="w-full px-3 py-2 rounded bg-black/30"
+              className="w-full px-3 py-2 rounded dark:bg-black/30 border border-gray-700 focus:outline-none focus:border-[var(--block-primary)]"
             />
             <button
               onClick={updatePassword}
@@ -283,7 +283,7 @@ export default function AdminSettingsPage() {
         </section>
 
         {/* User Management */}
-        <section className="bg-[var(--block-secondary)] p-6 rounded-xl shadow">
+        <section className="dark:bg-[var(--block-secondary)] p-6 rounded-xl shadow">
           <h2 className="text-xl font-semibold mb-4">User Management</h2>
 
           <div className="overflow-x-auto">
@@ -310,7 +310,7 @@ export default function AdminSettingsPage() {
                           onClick={() => updateUserRole(u.id, r)}
                           className={`px-3 py-1 rounded text-xs font-semibold ${
                             u.user_type === r
-                              ? 'bg-gray-700 cursor-not-allowed'
+                              ? 'bg-gray-700 cursor-not-allowed text-white'
                               : 'bg-[var(--block-primary)] hover:opacity-80'
                           }`}
                         >

@@ -104,7 +104,7 @@ return (
                             return (
                                 <div
                                     key={a.id}
-                                    className="rounded-xl p-5 shadow-md border border-gray-200 bg-[var(--block-secondary)] hover:shadow-lg transition-all duration-200"
+                                    className="rounded-xl p-5 shadow-md border border-gray-200 dark:bg-[var(--block-secondary)] hover:shadow-lg transition-all duration-200"
                                 >
                                     <h3 className="text-lg font-bold mb-2 text-[var(--text-primary)]">
                                         {a.title || `Assessment ${a.id}`}

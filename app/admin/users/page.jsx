@@ -106,13 +106,13 @@ return (
                             {users.map(u => (
                                 <div
                                     key={u.id}
-                                    className="rounded-xl p-5 shadow-md border border-gray-200 bg-[var(--block-secondary)] hover:shadow-lg transition-all duration-200"
+                                    className="rounded-xl p-5 shadow-md border border-gray-200 bg-blue-400 dark:bg-[var(--block-secondary)] hover:shadow-lg transition-all duration-200"
                                 >
-                                    <h3 className="text-lg font-bold mb-2 text-[var(--text-primary)]">
+                                    <h3 className="text-lg font-bold mb-2 text-green-200 dark:text-[var(--text-primary)]">
                                         {u.first_name || u.full_name || 'Unnamed User'}
                                     </h3>
 
-                                    <div className="space-y-2 text-[var(--text-secondary)]">
+                                    <div className="space-y-2 text-white dark:text-[var(--text-secondary)]">
                                         <p>
                                             <span className="font-semibold">Email:</span>{" "}
                                             {u.email || u.user_email || '—'}

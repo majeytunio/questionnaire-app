@@ -111,7 +111,7 @@ export default function Dashboard() {
         <section className="mb-8">
           <h2 className="text-xl font-semibold mb-2">Your Profile</h2>
           {profile ? (
-            <div className="bg-[var(--block-secondary)] shadow-md p-4 rounded">
+            <div className="dark:bg-[var(--block-secondary)] bg-blue-400 shadow-md p-4 rounded text-white">
               <p><strong>Email:</strong> {user.email}</p>
               <p><strong>Full Name:</strong> {profile.first_name} {profile.last_name}</p>
               <p><strong>User Type:</strong> {profile.user_type.toUpperCase() || 'USER'}</p>
@@ -130,16 +130,16 @@ export default function Dashboard() {
             {assessments.map(a => (
                 <div
                 key={a.id}
-                className="rounded-xl p-5 shadow-md border border-gray-200 bg-[var(--block-secondary)] hover:shadow-lg transition-all duration-200"
+                className="rounded-xl p-5 shadow-md border border-gray-200 bg-blue-400 dark:bg-[var(--block-secondary)] hover:shadow-lg transition-all duration-200"
                 >
-                <h3 className="text-lg font-bold mb-2 text-[var(--text-primary)]">
+                <h3 className="text-lg font-bold mb-2 text-white dark:text-[var(--text-primary)]">
                     Assessment #{a.question_index}
                 </h3>
 
-                <div className="space-y-2 text-[var(--text-secondary)]">
+                <div className="space-y-2 text-white dark:text-[var(--text-secondary)]">
                     <p>
                     <span className="font-semibold">Status:</span>{" "}
-                    <span className="text-green-600 font-medium">Completed</span>
+                    <span className="text-green-200 dark:text-green-600 font-medium">Completed</span>
                     </p>
 
                     {a.created_at && (

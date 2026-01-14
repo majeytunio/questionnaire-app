@@ -18,7 +18,7 @@ export default function Home() {
           <h1 className="text-4xl text-[var(--text-primary)] sm:text-5xl font-bold tracking-tight text-center">
             AI Questionnaire Platform
           </h1>
-          <p className="text-lg text-[var(--white)] mt-2 text-center">
+          <p className="text-lg text-gray-800 dark:text-[var(--white)] mt-2 text-center">
             Create, share, and analyze AI-powered questionnaires in minutes. 
             Let artificial intelligence do the heavy lifting while you focus on insights.
           </p>
@@ -33,28 +33,28 @@ export default function Home() {
             </a>
             <a
               href="#learn-more"
-              className="px-6 py-3 rounded-2xl border border-[var(--border-secondary)] text-[var(--white)] hover:text-[var(--text-primary)] hover:bg-[var(--white)] transition"
+              className="px-6 py-3 rounded-2xl border border-[var(--border-secondary)] text-gray-800 dark:text-[var(--white)] hover:text-[var(--text-primary)] hover:bg-[var(--white)] transition"
             >
               Learn More
             </a>
           </div>
 
           {/* Feature Highlight */}
-          <section className="mt-12 grid sm:grid-cols-3 gap-8 text-gray-700">
-            <div className="p-6 rounded-2xl shadow bg-[var(--block-secondary)] text-white">
+          <section className="mt-12 grid sm:grid-cols-3 gap-8 text-gray-200 dark:text-gray-700">
+            <div className="p-6 rounded-2xl shadow bg-blue-400 dark:bg-[var(--block-secondary)] text-gray-200 dark:text-gray-100">
               <h3 className="text-xl font-semibold">Smart Surveys</h3>
               <p className="mt-2 text-sm">
                 Build dynamic questionnaires that adapt to user responses.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl shadow bg-[var(--block-secondary)] text-white">
+            <div className="p-6 rounded-2xl shadow bg-blue-400 dark:bg-[var(--block-secondary)] text-gray-200 dark:text-gray-100">
               <h3 className="text-xl font-semibold">Instant Insights</h3>
               <p className="mt-2 text-sm">
                 AI analyzes responses and gives you actionable results instantly.
               </p>
             </div>
-            <div className="p-6 rounded-2xl shadow bg-[var(--block-secondary)] text-white">
+            <div className="p-6 rounded-2xl shadow bg-blue-400 dark:bg-[var(--block-secondary)] text-gray-200 dark:text-gray-100">
               <h3 className="text-xl font-semibold">Seamless Sharing</h3>
               <p className="mt-2 text-sm">
                 Share questionnaires with a link and track responses in real time.

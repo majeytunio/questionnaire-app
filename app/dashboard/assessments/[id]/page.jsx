@@ -185,17 +185,17 @@ export default function AssessmentDetailPage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Summary Card */}
-        <div className="col-span-1 bg-[var(--block-secondary)] p-5 rounded-xl shadow">
+        <div className="col-span-1 bg-blue-400 dark:bg-[var(--block-secondary)] p-5 rounded-xl shadow">
           {/* <p><strong>ID: </strong> {assessment.id}</p>
           <p><strong>User: </strong> {user_id}</p> */}
-          <p><strong>Completed: </strong> 
+          <p className="text-white"><strong>Completed: </strong> 
           <span  className={completed === true ? 'text-[var(--success-color)]' : 'danger-color'}>
             {completed === true ? 'Yes' : 'Partial'}
           </span>
           </p>
-          <p><strong>Updated At: </strong> {new Date(updated_at).toLocaleString()}</p>
+          <p className="text-white"><strong>Updated At: </strong> {new Date(updated_at).toLocaleString()}</p>
           {assessment.score !== undefined && <p><strong>Score:</strong> {assessment.score}</p>}
-          <p><strong>Language: </strong> {assessment.language || 'N/A'}</p>
+          <p className="text-white"><strong>Language: </strong> {assessment.language || 'N/A'}</p>
           <div className="mt-4">
             <button
               className="w-full py-2 rounded-lg bg-[var(--block-primary)] text-white"
@@ -213,37 +213,37 @@ export default function AssessmentDetailPage() {
 
         {/* Messages / Chat */}
         <div className="col-span-1 lg:col-span-2">
-          <div className="bg-[var(--block-secondary)] p-5 rounded-xl shadow mb-6">
-            <h2 className="text-xl font-semibold mb-3">Chat Transcript</h2>
+          <div className="bg-blue-400 dark:bg-[var(--block-secondary)] p-5 rounded-xl shadow mb-6">
+            <h2 className="text-xl font-semibold mb-3 text-white">Chat Transcript</h2>
             <div className="space-y-3 max-h-[40vh] overflow-auto">
-              {messages.length === 0 && <p className="text-[var(--text-secondary)]">No messages</p>}
+              {messages.length === 0 && <p className="text-orange-400 dark:text-[var(--text-secondary)]">No messages</p>}
               {messages.map((m, i) => (
                 <div
                   key={i}
-                  className={`p-3 rounded-lg ${m.sender === 'bot' ? 'bg-[var(--gray-dark)]' : 'bg-[var(--block-secondary)]'}`}
+                  className={`p-3 rounded-lg ${m.sender === 'bot' ? 'bg-blue-800 dark:bg-[var(--gray-dark)]' : 'bg-blue-200 dark:bg-[var(--block-secondary)]'}`}
                 >
-                  <div className="text-xs text-[var(--text-secondary)] mb-1 uppercase">{m.sender}</div>
-                  <div className="whitespace-pre-wrap">{m.text}</div>
+                  <div className={`text-xs ${m.sender === 'bot' ? 'text-white' : 'text-blue-800'} dark:text-[var(--text-secondary)] mb-1 uppercase`}>{m.sender}</div>
+                  <div className={`whitespace-pre-wrap ${m.sender === 'bot' ? 'text-white' : 'text-blue-400'}`}>{m.text}</div>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Responses grouped by category */}
-          <div className="bg-[var(--block-secondary)] p-5 rounded-xl shadow">
-            <h2 className="text-xl font-semibold mb-3">Responses</h2>
+          <div className="bg-blue-400 dark:bg-[var(--block-secondary)] p-5 rounded-xl shadow">
+            <h2 className="text-xl font-semibold mb-3 text-white">Responses</h2>
 
             {Object.keys(responses).length === 0 && <p className="text-[var(--text-secondary)]">No structured responses</p>}
 
             <div className="space-y-4">
               {Object.entries(responses).map(([category, answers]) => (
-                <div key={category} className="border rounded-lg p-4 bg-[var(--block-secondary)]">
-                  <h3 className="font-bold mb-2 text-[var(--text-primary)]">{category}</h3>
+                <div key={category} className="border border-white rounded-lg p-4 bg-blue-500 dark:bg-[var(--block-secondary)]">
+                  <h3 className="font-bold mb-2 text-white dark:text-[var(--text-primary)]">{category}</h3>
                   <div className="grid grid-cols-1 gap-2">
                     {Object.entries(answers).map(([q, a]) => (
-                      <div key={q} className="p-2 rounded-md bg-[var(--gray-dark)]">
-                        <div className="text-sm font-semibold">{q}</div>
-                        <div className="text-[var(--text-secondary)] mt-1">{a}</div>
+                      <div key={q} className="p-2 rounded-md bg-blue-600 dark:bg-[var(--gray-dark)]">
+                        <div className="text-sm font-semibold text-orange-200 dark:text-orange-200">{q}</div>
+                        <div className="dark:text-[var(--text-secondary)] text-white mt-1">{a}</div>
                       </div>
                     ))}
                   </div>
@@ -257,8 +257,8 @@ export default function AssessmentDetailPage() {
 
       {/* Optional extra: show full JSON at bottom */}
       <div className="mt-6 bg-[var(--block-secondary)] p-4 rounded-lg">
-        <h3 className="font-semibold mb-2">Full Record (JSON)</h3>
-        <pre className="max-h-48 overflow-auto text-xs p-2 bg-[var(--block-secondary)] rounded">{JSON.stringify(assessment, null, 2)}</pre>
+        <h3 className="font-semibold mb-2 text-white">Full Record (JSON)</h3>
+        <pre className="max-h-48 overflow-auto text-xs p-2 bg-blue-400 text-white dark:bg-[var(--block-secondary)] rounded">{JSON.stringify(assessment, null, 2)}</pre>
       </div>
     </div>
   );

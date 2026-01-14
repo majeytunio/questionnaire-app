@@ -171,24 +171,24 @@ export default function NavBar({ currentUser }) {
     <>
       <Toaster position="bottom-right" />
 
-      <nav className="w-full flex justify-between items-center py-4 px-6 bg-[var(--navbar-background)]">
+      <nav className="w-full flex justify-between items-center py-4 px-6 bg-blue-400 dark:bg-[var(--navbar-background)]">
         
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold text-[var(--text-primary)]">
+        <Link href="/" className="text-2xl font-bold text-gray-200 dark:text-[var(--white)]">
           AI Questionnaire
         </Link>
 
         {/* Dynamic Menus */}
-        <div className="hidden sm:flex gap-6 text-[var(--white)]">
+        <div className="hidden sm:flex gap-6 text-[var(--white)] dark:text-[var(--white)]">
 
           {/* ---------------------- */}
           {/* 1. GENERAL PUBLIC MENU */}
           {/* ---------------------- */}
           {(userType === "public") && (
             <>
-              <Link href="/#features" className="hover:text-[var(--navbar-link-hover)]">Features</Link>
-              <Link href="/#pricing" className="hover:text-[var(--navbar-link-hover)]">Pricing</Link>
-              <Link href="/#contact" className="hover:text-[var(--navbar-link-hover)]">Contact</Link>
+              <Link href="/#features" className="hover:text-[var(--navbar-link-hover)] dark:hover:text-gray-300">Features</Link>
+              <Link href="/#pricing" className="hover:text-[var(--navbar-link-hover)] dark:hover:text-gray-300">Pricing</Link>
+              <Link href="/#contact" className="hover:text-[var(--navbar-link-hover)] dark:hover:text-gray-300">Contact</Link>
             </>
           )}
 
@@ -197,9 +197,9 @@ export default function NavBar({ currentUser }) {
           {/* ---------------------- */}
           {userType === "user" && (
             <>
-              <Link href="/dashboard" className="hover:text-[var(--navbar-link-hover)]">Dashboard</Link>
-              <Link href="/assessments" className="hover:text-[var(--navbar-link-hover)]">My Assessments</Link>
-              <Link href="/profile" className="hover:text-[var(--navbar-link-hover)]">Profile</Link>
+              <Link href="/dashboard" className="hover:text-[var(--navbar-link-hover)] dark:hover:text-gray-300">Dashboard</Link>
+              <Link href="/assessments" className="hover:text-[var(--navbar-link-hover)] dark:hover:text-gray-300">My Assessments</Link>
+              <Link href="/profile" className="hover:text-[var(--navbar-link-hover)] dark:hover:text-gray-300">Profile</Link>
             </>
           )}
 
@@ -208,12 +208,12 @@ export default function NavBar({ currentUser }) {
           {/* ---------------------------- */}
           {userType === "counsellor" && (
             <>
-              <Link href="/dashboard" className="hover:text-[var(--navbar-link-hover)]">Dashboard</Link>
-              <Link href="/counsellor/clients" className="hover:text-[var(--navbar-link-hover)]">Clients</Link>
-              <Link href="/counsellor/assessments" className="hover:text-[var(--navbar-link-hover)]">
+              <Link href="/dashboard" className="hover:text-[var(--navbar-link-hover)] dark:hover:text-gray-300">Dashboard</Link>
+              <Link href="/counsellor/clients" className="hover:text-[var(--navbar-link-hover)] dark:hover:text-gray-300">Clients</Link>
+              <Link href="/counsellor/assessments" className="hover:text-[var(--navbar-link-hover)] dark:hover:text-gray-300">
                 Assessments Review
               </Link>
-              <Link href="/profile" className="hover:text-[var(--navbar-link-hover)]">Profile</Link>
+              <Link href="/profile" className="hover:text-[var(--navbar-link-hover)] dark:hover:text-gray-300">Profile</Link>
             </>
           )}
 
@@ -222,10 +222,10 @@ export default function NavBar({ currentUser }) {
           {/* ------------------------ */}
           {userType === "admin" && isAdmin && (
             <>
-              <Link href="/admin/dashboard" className="hover:text-[var(--navbar-link-hover)]">Dashboard</Link>
-              <Link href="/admin/users" className="hover:text-[var(--navbar-link-hover)]">Manage Users</Link>
-              <Link href="/admin/assessments" className="hover:text-[var(--navbar-link-hover)]">All Assessments</Link>
-              <Link href="/admin/settings" className="hover:text-[var(--navbar-link-hover)]">Admin Settings</Link>
+              <Link href="/admin/dashboard" className="hover:text-gray-800 dark:hover:text-[var(--navbar-link-hover)]">Dashboard</Link>
+              <Link href="/admin/users" className="hover:text-gray-800 dark:hover:text-[var(--navbar-link-hover)]">Manage Users</Link>
+              <Link href="/admin/assessments" className="hover:text-gray-800 dark:hover:text-[var(--navbar-link-hover)]">All Assessments</Link>
+              <Link href="/admin/settings" className="hover:text-gray-800 dark:hover:text-[var(--navbar-link-hover)]">Admin Settings</Link>
             </>
           )}
           </div>

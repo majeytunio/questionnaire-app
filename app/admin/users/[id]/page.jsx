@@ -391,7 +391,7 @@ export default function UserDetailsPage() {
         <h2 className="text-xl font-bold text-[var(--danger-color)]">User not found.</h2>
         <button
           onClick={() => router.push('/dashboard')}
-          className="mt-4 px-4 py-2 bg-[var(--block-primary)] text-white rounded-lg hover:opacity-90 transition"
+          className="mt-4 px-4 py-2 bg-blue-400 dark:bg-[var(--block-primary)] text-white rounded-lg hover:opacity-90 transition"
         >
           Back to Dashboard
         </button>
@@ -415,7 +415,7 @@ export default function UserDetailsPage() {
         <h1 className="text-3xl font-bold text-[var(--text-primary)]">User Detail / Edit</h1>
         <button
           onClick={() => router.push('/admin/users')}
-          className="px-4 py-2 bg-[var(--block-secondary)] text-white rounded-lg hover:opacity-90 transition"
+          className="px-4 py-2 bg-blue-400 dark:bg-[var(--block-secondary)] text-white rounded-lg hover:opacity-90 transition"
         >
           Back to Users
         </button>
@@ -423,7 +423,7 @@ export default function UserDetailsPage() {
 
       <form onSubmit={handleSave} className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Left column: Editable form */}
-        <div className="col-span-2 bg-[var(--block-secondary)] p-6 rounded-xl shadow-lg space-y-4">
+        <div className="col-span-2 dark:bg-[var(--block-secondary)] p-6 rounded-xl shadow-lg space-y-4">
           <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-4">Edit Info</h2>
 
           <InputField
@@ -476,7 +476,7 @@ export default function UserDetailsPage() {
             <select
                 value={user_type || 'user'}
                 onChange={(e) => setUserDetails({ ...userDetails, user_type: e.target.value })}
-                className="w-full px-3 py-2 rounded border bg-[var(--block-secondary)] text-[var(--white)] focus:outline-none focus:ring-2 focus:ring-[var(--block-primary)]"
+                className="w-full px-3 py-2 rounded border dark:bg-[var(--block-secondary)] dark:text-[var(--white)] focus:outline-none focus:ring-2 focus:ring-[var(--block-primary)]"
                 disabled={loadingData}
                 >
                 <option value="user">User</option>
@@ -494,7 +494,7 @@ export default function UserDetailsPage() {
           <div className="flex gap-3 mt-4">
             <button
               type="submit"
-              className="px-4 py-2 bg-[var(--block-primary)] text-white rounded-lg hover:opacity-90 transition"
+              className="px-4 py-2 bg-blue-400 dark:bg-[var(--block-primary)] text-white rounded-lg hover:opacity-90 transition"
               disabled={loadingData}
             >
               {loadingData ? 'Saving...' : 'Save'}
@@ -522,7 +522,7 @@ export default function UserDetailsPage() {
         </div>
 
         {/* Right column: Info panel */}
-        <div className="col-span-1 bg-[var(--block-secondary)] p-6 rounded-xl shadow-lg space-y-6">
+        <div className="col-span-1 dark:bg-[var(--block-secondary)] p-6 rounded-xl shadow-lg space-y-6">
           <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-4">User Info</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

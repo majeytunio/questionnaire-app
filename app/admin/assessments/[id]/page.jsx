@@ -389,7 +389,7 @@ export default function AssessmentDetailsPage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
         {/* Left Panel */}
-        <div className="col-span-2 bg-[var(--block-secondary)] p-6 rounded-xl shadow-lg space-y-6">
+        <div className="col-span-2 dark:bg-[var(--block-secondary)] p-6 rounded-xl shadow-lg space-y-6">
           <h2 className="text-xl font-semibold mb-4 text-[var(--text-primary)]">Assessment Info</h2>
 
           <InfoField label="Title" value={title || `Assessment ${id}`} />
@@ -414,7 +414,7 @@ export default function AssessmentDetailsPage() {
         </div>
 
         {/* Right Panel */}
-        <div className="col-span-1 bg-[var(--block-secondary)] p-6 rounded-xl shadow-lg space-y-8">
+        <div className="col-span-1 dark:bg-[var(--block-secondary)] p-6 rounded-xl shadow-lg space-y-8">
           {/* <h2 className="text-xl font-semibold text-[var(--text-primary)]">Responses</h2> */}
 
           {/* Display responses (JSON object) */}
@@ -431,7 +431,7 @@ export default function AssessmentDetailsPage() {
             <p className="text-gray-400">No responses found.</p>
           )} */}
 
-          <h2 className="text-xl font-semibold text-[var(--text-primary)] mt-10">Messages</h2>
+          <h2 className="text-xl font-semibold dark:text-[var(--text-primary)] text-gray-600 mt-10">Messages</h2>
 
           {/* Display messages (array of { role, content }) */}
           {messages && Array.isArray(messages) && messages.length > 0 ? (
@@ -450,12 +450,12 @@ export default function AssessmentDetailsPage() {
                         : "bg-green-600/20 border border-green-500/30"}`}
                 >
                     <p className={`text-xs font-semibold uppercase 
-                        ${msg.sender === "user" ? "text-blue-300" : "text-green-300"}`}
+                        ${msg.sender === "user" ? "text-blue-800 dark:text-blue-300" : "text-green-800 dark:text-green-300"}`}
                     >
                         {msg.sender}
                     </p>
 
-                    <p className="text-gray-100 mt-1">{msg.text}</p>
+                    <p className="text-gray-800 mt-1 text-black">{msg.text}</p>
                 </div>
 
 
