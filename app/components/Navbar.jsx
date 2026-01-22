@@ -208,12 +208,12 @@ export default function NavBar({ currentUser }) {
           {/* ---------------------------- */}
           {userType === "counsellor" && (
             <>
-              <Link href="/dashboard" className="hover:text-[var(--navbar-link-hover)] dark:hover:text-gray-300">Dashboard</Link>
+              <Link href="/counsellor" className="hover:text-[var(--navbar-link-hover)] dark:hover:text-gray-300">Counsellor</Link>
               <Link href="/counsellor/clients" className="hover:text-[var(--navbar-link-hover)] dark:hover:text-gray-300">Clients</Link>
               <Link href="/counsellor/assessments" className="hover:text-[var(--navbar-link-hover)] dark:hover:text-gray-300">
                 Assessments Review
               </Link>
-              <Link href="/profile" className="hover:text-[var(--navbar-link-hover)] dark:hover:text-gray-300">Profile</Link>
+              <Link href="/counsellor/profile" className="hover:text-[var(--navbar-link-hover)] dark:hover:text-gray-300">Profile</Link>
             </>
           )}
 

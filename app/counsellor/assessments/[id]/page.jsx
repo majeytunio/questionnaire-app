@@ -352,7 +352,7 @@ export default function AssessmentDetailsPage() {
       <div className="p-10 text-center">
         <h2 className="text-xl font-bold text-[var(--danger-color)]">Assessment not found.</h2>
         <button
-          onClick={() => router.push('/assessments')}
+          onClick={() => router.push('/counsellor/assessments')}
           className="mt-4 px-4 py-2 bg-[var(--block-primary)] text-white rounded-lg"
         >
           Back to Assessments
@@ -379,7 +379,7 @@ export default function AssessmentDetailsPage() {
         <h1 className="text-3xl font-bold text-[var(--text-primary)]">Assessment Details</h1>
 
         <button
-          onClick={() => router.push('/admin/assessments')}
+          onClick={() => router.push('/counsellor/assessments')}
           className="px-4 py-2 bg-[var(--block-secondary)] text-white rounded-lg hover:opacity-90 transition"
         >
           Back to Assessments
