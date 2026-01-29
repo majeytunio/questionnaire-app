@@ -161,6 +161,8 @@ export default function NavBar({ currentUser }) {
         error: (err) => err.message || "Logout failed.",
       }
     );
+    
+    router.push("/auth/login");
   };
 
   // Detect user role

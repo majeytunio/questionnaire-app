@@ -211,7 +211,9 @@ export default function AdminSettingsPage() {
       const { data: usersData } = await supabase
         .from('profiles')
         .select('id, email, first_name, last_name, user_type, created_at')
-        .order('created_at', { ascending: false });
+        .order('created_at', { ascending: false })
+        .eq('user_type', 'user')
+        ;
 
       setUsers(usersData || []);
       setLoadingData(false);
