@@ -51,57 +51,51 @@ export default function Dashboard() {
     }
   }, [user, loading]);
 
+  // Fetch profile and assessments
   useEffect(() => {
-    if (!user) return;
+    if (user) {
+      const fetchData = async () => {
+        setLoadingData(true);
 
-    const fetchData = async () => {
-      setLoadingData(true);
+        // Fetch profile
+        const { data: profileData, error: profileError } = await supabase
+          .from('profiles')
+          .select('*')
+          .eq('id', user.id)
+          .single();
 
-      /* =======================
-        1️⃣ Fetch profile
-      ======================= */
-      const { data: profileData, error: profileError } = await supabase
-        .from("profiles")
-        .select("*")
-        .eq("id", user.id)
-        .single();
+        if (profileError) console.error('Profile fetch error:', profileError);
+        else setProfile(profileData);
 
-      if (profileError) {
-        console.error("Profile fetch error:", profileError);
+        // // Fetch completed assessments
+        // const { data: assessmentsData, error: assessmentsError } = await supabase
+        //   .from('assessments')
+        //   .select('*')
+        //   .eq('user_id', user.id)
+        //   .order('created_at', { ascending: false });
+
+        const { data, error } = await supabase
+            .from('assessments')
+            .select('*');
+            // .eq('user_id', user.id);
+
+            if (error) {
+            console.error("Supabase Error:", error);
+            } else {
+            console.log("Assessments:", data);
+            }
+        const assessmentsData = data;
+        const assessmentsError = error;
+
+        if (assessmentsError) console.error('Assessments fetch error:', assessmentsError);
+        else setAssessments(assessmentsData || []);
+
         setLoadingData(false);
-        return;
-      }
+      };
 
-      setProfile(profileData);
-
-      /* =======================
-        2️⃣ Fetch assessments
-      ======================= */
-      let assessmentsQuery = supabase
-        .from("assessments")
-        .select("*")
-        .order("created_at", { ascending: false });
-
-      // 🔑 Role-based logic
-      if (profileData.user_type !== "admin") {
-        assessmentsQuery = assessmentsQuery.eq("user_id", user.id);
-      }
-
-      const { data: assessmentsData, error: assessmentsError } =
-        await assessmentsQuery;
-
-      if (assessmentsError) {
-        console.error("Assessments fetch error:", assessmentsError);
-      } else {
-        setAssessments(assessmentsData || []);
-      }
-
-      setLoadingData(false);
-    };
-
-    fetchData();
+      fetchData();
+    }
   }, [user]);
-
 
   if (loading || loadingData) {
     return <p className="text-center mt-10">Loading...</p>;
@@ -120,12 +114,7 @@ export default function Dashboard() {
             <div className="dark:bg-[var(--block-secondary)] bg-blue-400 shadow-md p-4 rounded text-white">
               <p><strong>Email:</strong> {user.email}</p>
               <p><strong>Full Name:</strong> {profile.first_name} {profile.last_name}</p>
-              <p>
-                <strong>User Type:</strong>{" "}
-                {profile?.user_type === "user"
-                  ? "Senior Family"
-                  : (profile?.user_type || "USER").toUpperCase()}
-              </p>
+              <p><strong>User Type:</strong> {profile.user_type.toUpperCase() || 'USER'}</p>
             </div>
           ) : (
             <p>No profile information available.</p>
@@ -170,7 +159,7 @@ export default function Dashboard() {
 
                 <button
                     className="mt-4 w-full py-2 rounded-lg bg-[var(--block-primary)] text-white font-semibold hover:opacity-90 transition"
-                    onClick={() => router.push(`dashboard/assessments/${a.id}`)}
+                    onClick={() => router.push(`counsellor/assessments/${a.id}`)}
                 >
                     View Details
                 </button>

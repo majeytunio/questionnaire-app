@@ -197,11 +197,11 @@ export default function NavBar({ currentUser }) {
           {/* ---------------------- */}
           {/* 2. LOGGED-IN USER MENU */}
           {/* ---------------------- */}
-          {userType === "user" && (
+          {userType === "seniorfamily" || userType === "user" && (
             <>
               <Link href="/dashboard" className="hover:text-[var(--navbar-link-hover)] dark:hover:text-gray-300">Dashboard</Link>
-              <Link href="/assessments" className="hover:text-[var(--navbar-link-hover)] dark:hover:text-gray-300">My Assessments</Link>
-              <Link href="/profile" className="hover:text-[var(--navbar-link-hover)] dark:hover:text-gray-300">Profile</Link>
+              <Link href="/seniorfamily/assessments" className="hover:text-[var(--navbar-link-hover)] dark:hover:text-gray-300">My Assessments</Link>
+              <Link href="/seniorfamily/profile" className="hover:text-[var(--navbar-link-hover)] dark:hover:text-gray-300">Profile</Link>
             </>
           )}
 
